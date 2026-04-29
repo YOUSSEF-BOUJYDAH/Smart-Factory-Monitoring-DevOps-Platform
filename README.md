@@ -158,19 +158,79 @@ curl http://localhost:5000/health
 curl http://localhost:5000/metrics
 ```
 
-#### 6. Accéder au monitoring
+## 📊 Configuration du monitoring
+
+Une fois le projet lancé, il est possible d’accéder aux outils de monitoring et de visualisation.
+
+---
+
+### 🔎 Accès à Prometheus
 
 ```bash
 kubectl port-forward svc/prometheus 9090:9090 -n smart-factory
+````
+
+Puis ouvrir dans le navigateur :
+
+👉 [http://localhost:9090](http://localhost:9090)
+
+Dans l’interface Prometheus, tester la métrique suivante :
+
+```
+sensor_messages_total
+```
+
+Cela permet de vérifier que les données envoyées par les capteurs sont bien collectées.
+
+---
+
+### 📈 Accès à Grafana
+
+```bash
 kubectl port-forward svc/grafana 3000:3000 -n smart-factory
 ```
 
-Interfaces accessibles via :
+Puis ouvrir :
 
-* **http://localhost:9090** (Prometheus)
-* **http://localhost:3000** (Grafana)
+👉 [http://localhost:3000](http://localhost:3000)
 
-### 🧹 Nettoyage de l’environnement
+Identifiants par défaut :
+
+* user : admin
+* password : admin
+
+---
+
+### ⚙️ Connexion de Prometheus à Grafana
+
+1. Aller dans **Settings (⚙️) → Data Sources**
+2. Cliquer sur **Add data source**
+3. Choisir **Prometheus**
+4. Dans le champ URL, entrer :
+
+```
+http://prometheus:9090
+```
+
+5. Cliquer sur **Save & Test**
+
+---
+
+### 📊 Création d’un dashboard
+
+1. Aller dans **Dashboards → New Dashboard**
+2. Cliquer sur **Add new panel**
+3. Dans la section Query, entrer :
+
+```
+sensor_messages_total
+```
+
+4. Cliquer sur **Apply**, puis sauvegarder le dashboard
+
+
+
+###  Nettoyage de l’environnement
 
 Pour supprimer tous les déploiements et repartir d’un environnement propre :
 
