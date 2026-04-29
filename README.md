@@ -97,8 +97,87 @@ Chaque dossier du projet a un rôle spécifique afin de séparer clairement les 
 
 ## ▶️ Exécution et tests
 
-Le projet peut être lancé automatiquement à l’aide du script suivant :
+Le projet peut être lancé de deux manières : soit de façon automatisée avec un script Bash, soit manuellement pour comprendre chaque étape.
+
+---
+
+### 🚀 Option 1 — Exécution automatisée (recommandée)
+
+Un script Bash est disponible pour automatiser l’ensemble du déploiement :
 
 ```bash
 ./scripts/k8s.sh
 ```
+
+Ce script permet de :
+
+* **Construire** les images Docker
+* **Déployer** l’application sur Kubernetes
+* **Lancer** Prometheus et Grafana
+* **Tester** automatiquement l’API
+
+### 🔧 Option 2 — Exécution manuelle
+
+#### 1. Construire les images
+
+```bash
+minikube image build -t smart-factory-api:local -f docker/api.Dockerfile .
+minikube image build -t smart-factory-sensor:local -f docker/sensor.Dockerfile .
+```
+
+#### 2. Déployer sur Kubernetes
+
+```bash
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/
+kubectl apply -f monitoring/prometheus.yaml
+```
+
+#### 3. Vérifier les pods
+
+```bash
+kubectl get pods -n smart-factory
+```
+
+#### 4. Tester l’API
+
+```bash
+kubectl port-forward svc/api 5000:5000 -n smart-factory
+curl http://localhost:5000/health
+```
+
+#### 5. Vérifier les métriques
+
+```bash
+curl http://localhost:5000/metrics
+```
+
+#### 6. Accéder au monitoring
+
+```bash
+kubectl port-forward svc/prometheus 9090:9090 -n smart-factory
+kubectl port-forward svc/grafana 3000:3000 -n smart-factory
+```
+
+Interfaces accessibles via :
+
+* **http://localhost:9090** (Prometheus)
+* **http://localhost:3000** (Grafana)
+
+### 🧹 Nettoyage de l’environnement
+
+Pour supprimer tous les déploiements et repartir d’un environnement propre :
+
+```bash
+./scripts/k8s-clean.sh
+```
+
+Ou manuellement :
+
+```bash
+kubectl delete -f k8s/
+kubectl delete -f monitoring/prometheus.yaml
+kubectl delete namespace smart-factory
+```
+
+---
