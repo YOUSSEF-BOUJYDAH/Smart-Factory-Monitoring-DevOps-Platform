@@ -203,7 +203,7 @@ Identifiants par défaut :
 
 ### ⚙️ Connexion de Prometheus à Grafana
 
-1. Aller dans **Settings (⚙️) → Data Sources**
+1. Aller dans **Connections → Data Sources**
 2. Cliquer sur **Add data source**
 3. Choisir **Prometheus**
 4. Dans le champ URL, entrer :
@@ -228,7 +228,21 @@ sensor_messages_total
 
 4. Cliquer sur **Apply**, puis sauvegarder le dashboard
 
+##  Exemple d’affichage
 
+
+### Prometheus
+
+
+
+![Prometheus UI](./img/Prom.png)
+
+---
+
+### Grafana
+
+
+![Grafana Dashboard](./img/grafana.png)
 
 ###  Nettoyage de l’environnement
 
