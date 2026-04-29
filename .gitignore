@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+logs/*
+!logs/.gitkeep
+*.log
+
+# Environment
+.env
+
+# OS / IDE
+.vscode/
