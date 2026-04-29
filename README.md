@@ -36,37 +36,7 @@ L’ensemble des composants est orchestré avec Kubernetes, ce qui permet de gé
 
 Le projet est organisé de manière claire afin de séparer le code applicatif, l’infrastructure et l’automatisation.
 
-```bash
-.
-├── app
-│   ├── api
-│   │   └── api.py
-│   └── sensor
-│       └── sensor.py
-├── docker
-│   ├── api.Dockerfile
-│   └── sensor.Dockerfile
-├── k8s
-│   ├── api.yaml
-│   ├── grafana.yaml
-│   ├── namespace.yaml
-│   ├── network-policy.yaml
-│   ├── prometheus.yaml
-│   ├── sensor.yaml
-│   └── service.yaml
-├── logs
-├── monitoring
-│   └── prometheus.yaml
-├── scripts
-│   ├── cleanup.sh
-│   ├── deploy.sh
-│   ├── install.sh
-│   ├── test.sh
-│   └── utils.sh
-├── .env
-├── .gitignore
-└── README.md
-```
+![Structure du projet](./img/tree.png)
 
 
 ## 📂 Rôle des dossiers
