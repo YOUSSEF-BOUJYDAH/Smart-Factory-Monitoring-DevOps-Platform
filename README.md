@@ -1,6 +1,6 @@
-# 🏭 Smart Factory Monitoring DevOps Platform
+# Smart Factory Monitoring DevOps Platform
 
-## 🎯 Objectif du projet
+## Objectif du projet
 
 Ce projet a pour objectif de simuler une plateforme industrielle connectée, dans laquelle des capteurs génèrent des données envoyées vers une API pour être collectées, traitées et surveillées en temps réel.
 
@@ -8,7 +8,7 @@ Il permet de comprendre comment les systèmes industriels (OT) interagissent ave
 
 ---
 
-## 🧰 Environnement technique
+## Environnement technique
 
 Le projet s’appuie sur un environnement technique moderne, proche des standards utilisés en entreprise :
 
@@ -19,7 +19,7 @@ Le projet s’appuie sur un environnement technique moderne, proche des standard
 - **Orchestration** : Kubernetes (Minikube)
 - **Monitoring** : Prometheus et Grafana
 
-## 🧱 Architecture du projet
+## Architecture du projet
 
 L’architecture de ce projet repose sur une chaîne simple qui représente le fonctionnement d’un système industriel connecté.
 
@@ -32,14 +32,14 @@ L’ensemble des composants est orchestré avec Kubernetes, ce qui permet de gé
 ![Architecture Diagram](./img/Architecture.png)
 
 
-## 📁 Structure du projet
+## Structure du projet
 
 Le projet est organisé de manière claire afin de séparer le code applicatif, l’infrastructure et l’automatisation.
 
 ![Structure du projet](./img/tree.png)
 
 
-## 📂 Rôle des dossiers
+## Rôle des dossiers
 
 Chaque dossier du projet a un rôle spécifique afin de séparer clairement les responsabilités.
 
@@ -65,13 +65,13 @@ Chaque dossier du projet a un rôle spécifique afin de séparer clairement les 
 
 
 
-## ▶️ Exécution et tests
+## Exécution et tests
 
 Le projet peut être lancé de deux manières : soit de façon automatisée avec un script Bash, soit manuellement pour comprendre chaque étape.
 
 ---
 
-### 🚀 Option 1 — Exécution automatisée (recommandée)
+### Option 1 — Exécution automatisée (recommandée)
 
 Un script Bash est disponible pour automatiser l’ensemble du déploiement .
 Avant de lancer le script, il faut lui donner les droits d’exécution :
@@ -128,13 +128,13 @@ curl http://localhost:5000/health
 curl http://localhost:5000/metrics
 ```
 
-## 📊 Configuration du monitoring
+## Configuration du monitoring
 
 Une fois le projet lancé, il est possible d’accéder aux outils de monitoring et de visualisation.
 
 ---
 
-### 🔎 Accès à Prometheus
+### Accès à Prometheus
 
 ```bash
 kubectl port-forward svc/prometheus 9090:9090 -n smart-factory
@@ -142,7 +142,7 @@ kubectl port-forward svc/prometheus 9090:9090 -n smart-factory
 
 Puis ouvrir dans le navigateur :
 
-👉 [http://localhost:9090](http://localhost:9090)
+[http://localhost:9090](http://localhost:9090)
 
 Dans l’interface Prometheus, tester la métrique suivante :
 
@@ -154,7 +154,7 @@ Cela permet de vérifier que les données envoyées par les capteurs sont bien c
 
 ---
 
-### 📈 Accès à Grafana
+### Accès à Grafana
 
 ```bash
 kubectl port-forward svc/grafana 3000:3000 -n smart-factory
@@ -162,7 +162,7 @@ kubectl port-forward svc/grafana 3000:3000 -n smart-factory
 
 Puis ouvrir :
 
-👉 [http://localhost:3000](http://localhost:3000)
+[http://localhost:3000](http://localhost:3000)
 
 Identifiants par défaut :
 
@@ -186,7 +186,7 @@ http://prometheus:9090
 
 ---
 
-### 📊 Création d’un dashboard
+### Création d’un dashboard
 
 1. Aller dans **Dashboards → New Dashboard**
 2. Cliquer sur **Add new panel**
