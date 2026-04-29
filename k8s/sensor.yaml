@@ -13,9 +13,27 @@ spec:
       labels:
         app: sensor
     spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
       containers:
       - name: sensor
         image: smart-factory-sensor:local
+        imagePullPolicy: Never
         env:
         - name: API_URL
           value: "http://api:5000/data"
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "200m"
+            memory: "128Mi"
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
