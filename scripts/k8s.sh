@@ -48,4 +48,3 @@ echo ""
 kubectl port-forward svc/prometheus 9090:9090 -n $NAMESPACE > /dev/null 2>&1 &
 kubectl port-forward svc/grafana 3000:3000 -n $NAMESPACE > /dev/null 2>&1 &
 
-wait

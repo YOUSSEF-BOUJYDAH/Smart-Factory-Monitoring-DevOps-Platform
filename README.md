@@ -103,7 +103,13 @@ Le projet peut être lancé de deux manières : soit de façon automatisée avec
 
 ### 🚀 Option 1 — Exécution automatisée (recommandée)
 
-Un script Bash est disponible pour automatiser l’ensemble du déploiement :
+Un script Bash est disponible pour automatiser l’ensemble du déploiement .
+Avant de lancer le script, il faut lui donner les droits d’exécution :
+
+```bash
+chmod +x scripts/k8s.sh scripts/k8s-clean.sh
+```
+Ensuite, exécuter :
 
 ```bash
 ./scripts/k8s.sh
@@ -169,7 +175,7 @@ Interfaces accessibles via :
 Pour supprimer tous les déploiements et repartir d’un environnement propre :
 
 ```bash
-./scripts/k8s-clean.sh
+./scripts/k8s_cleanup.sh
 ```
 
 Ou manuellement :
