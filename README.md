@@ -27,7 +27,7 @@ Prometheus collecte ensuite ces métriques automatiquement, puis Grafana permet 
 
 L’ensemble des composants est orchestré avec Kubernetes, ce qui permet de gérer la communication entre services, la scalabilité et la résilience de l’application.
 
-[Architecture Diagram](./img/Architecture.png)
+![Architecture Diagram](./img/Architecture.png)
 
 
 ## 📁 Structure du projet
