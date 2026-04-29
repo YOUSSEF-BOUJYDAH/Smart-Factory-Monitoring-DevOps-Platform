@@ -1,21 +1,23 @@
 # 🏭 Smart Factory Monitoring DevOps Platform
 
-## 📌 Introduction
-
-Ce projet est une simulation d’une plateforme industrielle moderne, inspirée des systèmes utilisés dans les usines ou les infrastructures énergétiques.
-
-Dans ce type d’environnement, des capteurs collectent des données (température, pression, etc.) et les envoient vers des applications informatiques qui permettent de les analyser et de surveiller le système en temps réel.
-
-L’objectif de ce projet est de reproduire ce fonctionnement à petite échelle, afin de mieux comprendre comment les systèmes industriels (OT) communiquent avec les systèmes informatiques (IT) dans une architecture moderne.
-
 ## 🎯 Objectif du projet
 
-L’objectif de ce projet est de construire une plateforme complète capable de simuler un système industriel connecté.
+Ce projet a pour objectif de simuler une plateforme industrielle connectée, dans laquelle des capteurs génèrent des données envoyées vers une API pour être collectées, traitées et surveillées en temps réel.
 
-Le projet permet de générer des données de capteurs, de les envoyer vers une API, puis de les collecter et de les surveiller en temps réel grâce à des outils de monitoring.
+Il permet de comprendre comment les systèmes industriels (OT) interagissent avec les systèmes informatiques (IT), tout en mettant en pratique une approche DevOps basée sur la containerisation, l’orchestration avec Kubernetes et le monitoring.
 
-À travers cette réalisation, l’objectif est également de mettre en pratique une approche DevOps, en automatisant le déploiement, en utilisant des conteneurs et en orchestrant les services avec Kubernetes.
+---
 
+## 🧰 Environnement technique
+
+Le projet s’appuie sur un environnement technique moderne, proche des standards utilisés en entreprise :
+
+- **OS** : Linux (Ubuntu)
+- **Langage** : Python (Flask)
+- **Scripting** : Bash
+- **Conteneurisation** : Docker
+- **Orchestration** : Kubernetes (Minikube)
+- **Monitoring** : Prometheus et Grafana
 
 ## 🧱 Architecture du projet
 
