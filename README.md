@@ -92,7 +92,7 @@ Ce script permet de :
 * **Lancer** Prometheus et Grafana
 * **Tester** automatiquement l’API
 
-### 🔧 Option 2 — Exécution manuelle
+### Option 2 — Exécution manuelle
 
 #### 1. Construire les images
 
@@ -171,7 +171,7 @@ Identifiants par défaut :
 
 ---
 
-### ⚙️ Connexion de Prometheus à Grafana
+### Connexion de Prometheus à Grafana
 
 1. Aller dans **Connections → Data Sources**
 2. Cliquer sur **Add data source**
