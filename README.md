@@ -10,7 +10,7 @@ Il permet de comprendre comment les systèmes industriels (OT) interagissent ave
 
 ## Environnement technique
 
-Le projet s’appuie sur un environnement technique moderne, proche des standards utilisés en entreprise :
+Le projet s’appuie sur un environnement technique moderne :
 
 - **OS** : Linux (Ubuntu)
 - **Langage** : Python (Flask)
